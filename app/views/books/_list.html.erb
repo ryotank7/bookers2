@@ -1,0 +1,35 @@
+
+    <h2 class="">New book</h2>
+
+  <%= form_for(books) do |f| %>
+    <% if books.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= books.errors.count %>件のerrorが発生しました。</h2>
+        <ul>
+        <% books.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field.row">
+
+        <div class="field row">
+          <label for="book_title">title</label>
+          <%= f.text_field :title, class: "col-xs-12 book_title" %>
+      </div>
+      <div class="col-sm-6">
+      </div>
+    <div class="field row">
+        <label for="book_option">option</label>
+        <%= f.text_area :body, class: "col-xs-12 book_body", rows:"3" %>
+    </div>
+  </div>
+    <hr>
+    <div class="actions row">
+      <%= f.submit "createbook", class:"btn btn-primary col-xs-12" %>
+      <% end %>
+    </div>
+</div>
+
